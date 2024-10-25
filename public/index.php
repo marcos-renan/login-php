@@ -10,12 +10,12 @@ $rotas_permitidas = require_once __DIR__ . '/../inc/rotas.php';
 $rota = $_GET['rota'] ?? 'home';
 
 // verifica se o usuario esta logado
-if (!isset($_SESSION['usuario']) && $rota != 'login') {
+if (!isset($_SESSION['usuario']) && $rota !== 'login_submit') {
     $rota = 'login';
 }
 
 // se o usuario esta logado e tenta acessar a pagina de login
-if (isset($_SESSION['usuario']) && $rota == 'login') {
+if (isset($_SESSION['usuario']) && $rota === 'login') {
     $rota = 'home';
 }
 
@@ -36,7 +36,7 @@ switch ($rota) {
     $script = 'login.php';
     break;
 
-  case 'login-submit':
+  case 'login_submit':
     $script = 'login_submit.php';
     break;
 

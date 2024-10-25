@@ -1,4 +1,11 @@
-<?php ?>
+<?php
+
+//verifica se existe erro na sessao
+$erro = $_SESSION['error'] ?? null;
+
+unset($_SESSION['error']);
+
+?>
 
 <div class="contairner mt-5">
   <div class="row justify-content-center">
@@ -20,6 +27,13 @@
             <input type="submit" value="Entrar" class="btn btn-secondary w-100">
           </div>
         </form>
+
+        <?php if(!empty($erro)): ?>
+          <div class="alert alert-danger mt-3 p-2 text-center">
+            <?= $erro ?>
+          </div>
+        <?php endif; ?>
+
       </div>
     </div>
   </div>
