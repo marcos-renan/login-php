@@ -24,7 +24,7 @@ unset($_SESSION['error']);
             <input type="password" name="text_senha" class="form-control" required>
           </div>
           <div>
-            <input type="submit" value="Entrar" class="btn btn-secondary w-100">
+            <input type="submit" value="Entrar" class="btn btn-primary w-100">
           </div>
         </form>
 
