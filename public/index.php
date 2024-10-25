@@ -36,10 +36,18 @@ switch ($rota) {
     $script = 'login.php';
     break;
 
+  case 'login-submit':
+    $script = 'login_submit.php';
+    break;
+
   case 'home':
     $script = 'home.php';
     break;
 }
+
+//carregamento de scripts permanentes
+require_once __DIR__ . "/../inc/config.php";
+require_once __DIR__ . "/../inc/database.php";
 
 //apresentação da pagina
 require_once __DIR__ . "/../inc/header.php";
